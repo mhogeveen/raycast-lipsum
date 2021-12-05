@@ -33,6 +33,26 @@ const Command = (): JSX.Element => {
       searchBarPlaceholder={'Enter an amount of lipsum to generate'}
       onSearchTextChange={handleSearchTextChange}
     >
+      {listItems.map((listItem, index) => (
+        <List.Item
+          key={index}
+          icon={Icon.Text}
+          title={listItem.title}
+          actions={
+            <ActionPanel title="Clipboard">
+              <CopyToClipboardAction
+                title="Copy to Clipboard"
+                content={listItem.content}
+              />
+              <PasteAction
+                title="Paste Words"
+                content={listItem.content}
+                shortcut={{ modifiers: ["cmd"], key: "return" }}
+              />
+            </ActionPanel>
+          }
+        />
+      ))}
     </List>
   );
 }
