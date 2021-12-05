@@ -10,3 +10,7 @@ export const lorem = new LoremIpsum({
     min: 4
   }
 });
+
+export const getTitle = (name: string, count: number) => {
+  return count > 1 ? `Generate ${count} ${name}s` : `Generate a ${name}`;
+}
