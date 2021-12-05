@@ -2,6 +2,8 @@ import { List, ActionPanel, CopyToClipboardAction, PasteAction, Icon } from '@ra
 
 import { useState } from 'react';
 
+import { lorem, getTitle } from './utils';
+
 const Command = (): JSX.Element => {
   const [count, setCount] = useState<number>(1);
 
