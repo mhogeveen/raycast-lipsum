@@ -13,6 +13,21 @@ const Command = (): JSX.Element => {
     setCount(zeroIfNaN);
   }
 
+  const listItems = [
+    {
+      title: getTitle('word', count),
+      content: lorem.generateWords(count)
+    },
+    {
+      title: getTitle('sentence', count),
+      content: lorem.generateSentences(count)
+    },
+    {
+      title: getTitle('paragraph', count),
+      content: lorem.generateParagraphs(count)
+    },
+  ];
+
   return (
     <List
       searchBarPlaceholder={'Enter an amount of lipsum to generate'}
